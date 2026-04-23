@@ -1,9 +1,22 @@
-# ROS2_YOLOv8_RK3588_object_detect
-支持调用rk3588的NPU用来yolov8视觉检测的ros2部署包
+#🤖 ROS2 YOLOv8 RK3588 目标检测
+[![ROS2](https://img.shields.io/badge/ROS2-Humble-blue.svg)](https://docs.ros.org/en/humble/)
+[![Platform](https://img.shields.io/badge/Platform-RK3588-orange.svg)](https://www.rock-chips.com/)
+[![RKNN](https://img.shields.io/badge/RKNN-2.3.2-green.svg)](https://github.com/rockchip-linux/rknpu2)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-当前的RKNN的动态链接库的版本[rknn-toolkit2.3.2]
-支持图片检测与摄像头实时视频流检测
-### 环境准备
+> 基于 RK3588 NPU 加速的 YOLOv8 目标检测 ROS2 功能包  
+> 支持图片检测与摄像头实时视频流检测
+
+## ✨ 功能特性
+
+| 功能 | 状态 | 说明 |
+|:---|:---|:---|
+| 🖼️ 图片检测 | ✅ 完成 | 单张图片推理，保存结果 |
+| 📹 视频检测 | ✅ 完成 | USB 摄像头实时检测 |
+| ⚡ NPU 加速 | ✅ 完成 | RK3588 6TOPS 算力 |
+| 🔧 零拷贝优化 | ✅ 完成 | `rknn_create_mem` + `rknn_set_io_mem` |
+
+### 📦环境准备
 
 - ROS2环境安装：[ubuntu系统安装ROS（简单版）V2](https://azitide.github.io/post/ubuntu_ROS.html)
 
@@ -13,7 +26,7 @@
   sudo apt update & sudo apt install libopencv-dev python3-openc
   ```
 
-### rknn环境配置
+### 🔧rknn环境配置
 
 4.1.1  下载ROS2功能包放入ros2_ws/src的路径，路径如下
 
@@ -65,7 +78,7 @@ sudo chmod +x /lib/librknnrt.so
 
 ![image-20260423111042047](./image/image-20260423111042047.png)
 
-### 图片检测
+### 🖼️ 图片检测
 
 1、`yolov8_detect_rknn_pkg/src/img_detect_node.cpp`是图片检测程序【修改成你自己对应的路径】
 
@@ -90,7 +103,7 @@ ros2 run yolov8_detect_rknn_pkg img_detect_node
 
 ![image-20260423113331454](./image/image-20260423113331454.png)
 
-### 摄像头检测
+### 📹摄像头检测
 
 环境前提：开发板一般安装服务器版本，没有后端，我这里用的是PC电脑ssh远程连接到开发板ubuntu
 
