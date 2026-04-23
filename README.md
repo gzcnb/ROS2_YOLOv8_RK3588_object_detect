@@ -1,2 +1,4 @@
 # ROS2_YOLOv8_RK3588_object_detect
 支持调用rk3588的NPU用来yolov8视觉检测的ros2环境包
+
+当前的RKNN的动态链接库的版本[rknn-toolkit2.3.2]
