@@ -42,9 +42,9 @@
           │     └─ aarch64
           │        └─ librknnrt.so
           └─ include                  #需要用到头文件
-          ├─ rknn_api.h
-          ├─ rknn_custom_op.h
-          └─ rknn_matmul_api.h
+            ├─ rknn_api.h
+            ├─ rknn_custom_op.h
+            └─ rknn_matmul_api.h
 
 ```
 
